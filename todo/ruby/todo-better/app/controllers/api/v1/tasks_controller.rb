@@ -1,27 +1,27 @@
-class TasksController < ApplicationController
+class Api::V1::TasksController < ApplicationController
 
   before_action :set_task, only: %i[show update destroy]
 
   def index
-    render json: Task.all
+    render_jsonapi Task.all
   end
 
   def show
-    render json: @task
+    render_jsonapi @task
   end
 
   def create
-    render json: Task.create(task_params)
+    render_jsonapi Task.create(task_params), status: :created
   end
 
   def update
     @task.update(task_params)
-    render json: @task
+    render_jsonapi @task
   end
 
   def destroy
     @task.destroy
-    render json: @task
+    render_jsonapi @task
   end
 
   private
