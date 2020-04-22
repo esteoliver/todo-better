@@ -1,0 +1,420 @@
+Started GET "/" for ::1 at 2020-04-22 11:16:30 -0300
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/samantagonzalez/.rvm/gems/ruby-2.7.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/samantagonzalez/.rvm/gems/ruby-2.7.0/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.2ms | Allocations: 409)
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 2264)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-04-22 11:16:30 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTasks (20200422141901)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar, "done" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200422141901"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-22 14:21:57.719496"], ["updated_at", "2020-04-22 14:21:57.719496"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from block in execute at /Users/samantagonzalez/.rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281)
+Started GET "/tasks" for ::1 at 2020-04-22 11:41:46 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#index as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 73)
+
+
+Started GET "/tasks" for ::1 at 2020-04-22 11:42:11 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (undefined method `respond_to' for TasksController:Class
+Did you mean?  respond_to?):
+  
+app/controllers/tasks_controller.rb:2:in `<class:TasksController>'
+app/controllers/tasks_controller.rb:1:in `<main>'
+Started GET "/tasks" for ::1 at 2020-04-22 11:44:49 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1811)
+
+
+  
+NameError (uninitialized constant TasksController::Tasks):
+  
+app/controllers/tasks_controller.rb:3:in `index'
+Started GET "/tasks" for ::1 at 2020-04-22 11:44:59 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.8ms | Allocations: 3259)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "done", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "Learn Python"], ["done", 0], ["created_at", "2020-04-22 14:46:21.203676"], ["updated_at", "2020-04-22 14:46:21.203676"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "done", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "Learn Scala"], ["done", 0], ["created_at", "2020-04-22 14:46:21.209498"], ["updated_at", "2020-04-22 14:46:21.209498"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.6ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "done", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "Learn GoLang"], ["done", 0], ["created_at", "2020-04-22 14:46:21.214649"], ["updated_at", "2020-04-22 14:46:21.214649"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "done", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "Learn Javascript"], ["done", 1], ["created_at", "2020-04-22 14:46:21.219789"], ["updated_at", "2020-04-22 14:46:21.219789"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "done", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "Learn Ruby"], ["done", 1], ["created_at", "2020-04-22 14:46:21.224054"], ["updated_at", "2020-04-22 14:46:21.224054"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/tasks" for ::1 at 2020-04-22 11:46:26 -0300
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:3:in `index'
+No serializer found for resource: #<Task id: 1, description: "Learn Python", done: false, created_at: "2020-04-22 14:46:21", updated_at: "2020-04-22 14:46:21">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Task::ActiveRecord_Relation (1.11ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.7ms | Allocations: 4289)
+
+
+Started GET "/tasks" for ::1 at 2020-04-22 11:47:32 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.07ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.8ms | Allocations: 5123)
+
+
+Started GET "/tasks/" for ::1 at 2020-04-22 11:48:26 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#index as */*
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  ↳ app/controllers/tasks_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 1.0ms | Allocations: 4751)
+
+
+Started GET "/tasks/1" for ::1 at 2020-04-22 11:48:32 -0300
+Processing by TasksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms | Allocations: 941)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Task with 'id'=id):
+  
+app/controllers/tasks_controller.rb:7:in `show'
+Started GET "/tasks/1" for ::1 at 2020-04-22 11:48:47 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7:in `show'
+[active_model_serializers] Rendered TaskSerializer with ActiveModelSerializers::Adapter::Attributes (0.66ms)
+Completed 200 OK in 10ms (Views: 1.9ms | ActiveRecord: 0.8ms | Allocations: 4090)
+
+
+Started GET "/tasks/10" for ::1 at 2020-04-22 11:48:52 -0300
+Processing by TasksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7:in `show'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms | Allocations: 566)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Task with 'id'=10):
+  
+app/controllers/tasks_controller.rb:7:in `show'
+Started GET "/tasks/10" for ::1 at 2020-04-22 11:49:12 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.12ms)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.5ms | Allocations: 2018)
+
+
+Started GET "/tasks/10" for ::1 at 2020-04-22 11:50:10 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms | Allocations: 1591)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Task with 'id'=10):
+  
+app/controllers/tasks_controller.rb:7:in `show'
+Started GET "/tasks/1" for ::1 at 2020-04-22 11:50:15 -0300
+Processing by TasksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:7:in `show'
+[active_model_serializers] Rendered TaskSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 3080)
+
+
+Started POST "/tasks" for ::1 at 2020-04-22 11:51:35 -0300
+Processing by TasksController#create as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>false, "task"=>{"description"=>"Learn Data Science", "done"=>false}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 150)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/tasks_controller.rb:11:in `create'
+Started POST "/tasks" for ::1 at 2020-04-22 11:53:08 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#create as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>false, "task"=>{"description"=>"Learn Data Science", "done"=>false}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[36mTask Create (0.7ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "done", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "Learn Data Science"], ["done", 0], ["created_at", "2020-04-22 14:53:08.077163"], ["updated_at", "2020-04-22 14:53:08.077163"]]
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:11:in `create'
+[active_model_serializers] Rendered TaskSerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+Completed 200 OK in 17ms (Views: 1.8ms | ActiveRecord: 2.7ms | Allocations: 4918)
+
+
+Started PUT "/tasks/6" for ::1 at 2020-04-22 11:55:20 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#update as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>true, "id"=>"6", "task"=>{"description"=>"Learn Data Science", "done"=>true}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 500 Internal Server Error in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 883)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/tasks_controller.rb:18:in `update'
+Started PUT "/tasks/6" for ::1 at 2020-04-22 11:55:53 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#update as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>true, "id"=>"6", "task"=>{"description"=>"Learn Data Science", "done"=>true}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 500 Internal Server Error in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 878)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/tasks_controller.rb:18:in `update'
+Started PUT "/tasks/6" for ::1 at 2020-04-22 11:56:20 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#update as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>true, "id"=>"6", "task"=>{"description"=>"Learn Data Science", "done"=>true}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 500 Internal Server Error in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 880)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/tasks_controller.rb:19:in `update'
+Started PUT "/tasks/6" for ::1 at 2020-04-22 11:56:54 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#update as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>true, "id"=>"6", "task"=>{"description"=>"Learn Data Science", "done"=>true}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 500 Internal Server Error in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 881)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/tasks_controller.rb:20:in `update'
+Started PUT "/tasks/6" for ::1 at 2020-04-22 11:57:09 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#update as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>true, "id"=>"6", "task"=>{"description"=>"Learn Data Science", "done"=>true}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.14ms)
+Completed 500 Internal Server Error in 7ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 1754)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/tasks_controller.rb:20:in `update'
+Started PUT "/tasks/6" for ::1 at 2020-04-22 11:57:28 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#update as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>true, "id"=>"6", "task"=>{"description"=>"Learn Data Science", "done"=>true}}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:34:in `set_task'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.8ms | Allocations: 3575)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/tasks_controller.rb:20:in `update'
+Started PUT "/tasks/6" for ::1 at 2020-04-22 11:57:44 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#update as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>true, "id"=>"6", "task"=>{"description"=>"Learn Data Science", "done"=>true}}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:31:in `set_task'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `update'
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE "tasks" SET "done" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["done", 1], ["updated_at", "2020-04-22 14:57:44.536405"], ["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:18:in `update'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with TrueClass (0.07ms)
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 3.4ms | Allocations: 5412)
+
+
+Started PUT "/tasks/6" for ::1 at 2020-04-22 11:58:03 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#update as */*
+  Parameters: {"description"=>"Learn Data Science", "done"=>true, "id"=>"6", "task"=>{"description"=>"Learn Data Science", "done"=>true}}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:32:in `set_task'
+[active_model_serializers] Rendered TaskSerializer with ActiveModelSerializers::Adapter::Attributes (1.1ms)
+Completed 200 OK in 13ms (Views: 5.1ms | ActiveRecord: 1.2ms | Allocations: 3911)
+
+
+Started PUT "/tasks/6" for ::1 at 2020-04-22 11:58:20 -0300
+Processing by TasksController#update as */*
+  Parameters: {"description"=>"Learn Big Data", "done"=>true, "id"=>"6", "task"=>{"description"=>"Learn Big Data", "done"=>true}}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:32:in `set_task'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `update'
+  [1m[36mTask Update (0.5ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "Learn Big Data"], ["updated_at", "2020-04-22 14:58:20.164065"], ["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:18:in `update'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:18:in `update'
+[active_model_serializers] Rendered TaskSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.8ms | Allocations: 2860)
+
+
+Started DELETE "/tasks/6" for ::1 at 2020-04-22 11:59:20 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for TasksController):
+  
+actionpack (6.0.2.2) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.2) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.2.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/tasks/6" for ::1 at 2020-04-22 11:59:31 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 616)
+
+
+  
+NoMethodError (undefined method `delete' for nil:NilClass):
+  
+app/controllers/tasks_controller.rb:23:in `destroy'
+Started DELETE "/tasks/6" for ::1 at 2020-04-22 12:01:26 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:34:in `set_task'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:23:in `destroy'
+  [1m[36mTask Destroy (0.6ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/tasks_controller.rb:23:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:23:in `destroy'
+[active_model_serializers] Rendered TaskSerializer with ActiveModelSerializers::Adapter::Attributes (0.89ms)
+Completed 200 OK in 20ms (Views: 2.3ms | ActiveRecord: 3.0ms | Allocations: 5776)
+
+
+Started DELETE "/tasks/6" for ::1 at 2020-04-22 12:01:31 -0300
+Processing by TasksController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:34:in `set_task'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 553)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Task with 'id'=6):
+  
+app/controllers/tasks_controller.rb:34:in `set_task'
