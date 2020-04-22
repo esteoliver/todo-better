@@ -11,6 +11,12 @@ Task.create(
     { description: 'Learn Scala', done: false },
     { description: 'Learn GoLang', done: false },
     { description: 'Learn Javascript', done: true },
-    { description: 'Learn Ruby', done: true }
+    { description: 'Learn Ruby', done: true },
+
+    { description: 'Build a ToDo App', done: false },
+    { description: 'Add users to the ToDo App', done: false },
+    { description: 'Create a login', done: false },
+    { description: 'Develop a UI', done: false },
+    { description: 'Add task types', done: false }    
   ]
 )

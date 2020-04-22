@@ -3,7 +3,7 @@ class Api::V1::TasksController < ApplicationController
   before_action :set_task, only: %i[show update destroy]
 
   def index
-    render_jsonapi Task.all
+    render_jsonapi Task.all, page: params[:page]
   end
 
   def show
