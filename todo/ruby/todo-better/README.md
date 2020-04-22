@@ -13,3 +13,8 @@ ToDo Better
 ```
 
 - Configure and initialize database
+- Create Task model
+  * Create a seed of 10 tasks
+- Create CRUD of Task
+  * This include pagination
+  * JSON API responses

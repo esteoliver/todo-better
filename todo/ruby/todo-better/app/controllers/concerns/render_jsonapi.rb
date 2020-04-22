@@ -12,7 +12,7 @@ module RenderJsonapi
         resource = paginate_resource(resource, options[:page])
         serializer_options[:meta].tap do |m|
           m[:current_page] = resource.current_page
-          m[:total_pages] = resource.current_page
+          m[:total_pages] = resource.total_pages
         end
       end
 

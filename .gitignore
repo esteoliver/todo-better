@@ -4,3 +4,4 @@ todo/ruby/todo-better/db/sqlite/*
 todo/ruby/todo-better/log/development.log
 todo/ruby/todo-better/tmp/cache/bootsnap-load-path-cache
 todo/ruby/todo-better/log/*
+**/node_modules/*
