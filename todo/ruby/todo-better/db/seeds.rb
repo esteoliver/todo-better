@@ -17,6 +17,6 @@ Task.create(
     { description: 'Add users to the ToDo App', done: false },
     { description: 'Create a login', done: false },
     { description: 'Develop a UI', done: false },
-    { description: 'Add task types', done: false }    
+    { description: 'Add task types', done: false }
   ]
 )
