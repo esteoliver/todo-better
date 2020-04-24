@@ -7,15 +7,22 @@ const Task = models.Task
 
 // index
 router.get('/', function(req, res, next) {
-  Task.findAll()
-    .then( data => {
-      res.json(TaskSerializer.serialize(data));
+
+  const pageSize = 5;
+  const page = (req.query.page || 1)
+
+  Task.findAndCountAll({
+    order: [['id', 'asc']],
+    offset: pageSize * (page - 1),
+    limit: pageSize
+  }).then( data => {
+      res.json({...TaskSerializer.serialize(data.rows), ...{ meta: { 'current_page': parseInt(page), 'total_pages': Math.ceil(data.count / pageSize) }}});
     })
 });
 
 // show
 router.get('/:id', function(req, res, next) {
-  Task.findOne({ where: { id: req.params.id }})
+  Task.findByPk(req.params.id)
     .then( data => {
 
       if (!data) {
@@ -43,13 +50,14 @@ router.post('/', function(req, res, next) {
     done: req.body.done
   }, { fields: ['description', 'done'] })
     .then( data => {
+      res.status(201);
       res.json(TaskSerializer.serialize(data));
     })
 });
 
 // update
 router.put('/:id', function(req, res, next) {
-  Task.findOne({ where: { id: req.params.id }})
+  Task.findByPk(req.params.id)
       .then( instance => {
 
         if (!instance) {
@@ -77,7 +85,7 @@ router.put('/:id', function(req, res, next) {
 
 // delete
 router.delete('/:id', function(req, res, next) {
-  Task.findOne({ where: { id: req.params.id }})
+  Task.findByPk(req.params.id)
       .then( instance => {
 
         if (!instance) {
