@@ -1,18 +1,12 @@
 import express from 'express';
-import {
-  index,
-  show,
-  create,
-  update,
-  destroy
-} from '../../../controllers/api/v1/tasksController';
+import controller from '../../../controllers/api/v1/tasksController';
 
 const router = express.Router();
 
-router.get('/', index);
-router.get('/:id', show);
-router.post('/', create);
-router.put('/:id', update);
-router.delete('/:id', destroy);
+router.get('/', controller.index);
+router.get('/:id', controller.show);
+router.post('/', controller.create);
+router.put('/:id', controller.update);
+router.delete('/:id', controller.destroy);
 
 export default router;
