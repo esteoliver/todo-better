@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon start.js"
+    "start": "nodemon --exec babel-node -- start.js",
+    "debug": "nodemon --inspect start.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -18,9 +19,12 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-async-to-generator": "^7.8.3",
     "@babel/preset-env": "^7.9.5",
+    "babel-node": "0.0.1-security",
     "nodemon": "^2.0.3"
   }
 }
